@@ -67,6 +67,54 @@ func main
 在这里，main 函数中嵌套了一个 inner 函数，inner 函数的实际名称是 main.inner ，通过这个名字可以在任何地方调用它，但是如果在 main 函数中，可以简化调用为 .inner 。
 依此性质，这段代码将输出 Hello xc xc 。
 
+##### 3.3 函数的返回值 return变量 和 return语句
+在EXTS中，默认所有函数都有返回值，每个函数存储域中都有一个变量（名叫） return 来存储返回值，区别于语句 return，return 变量作用仅为存储返回值，return 语句的作用是存储返回值并直接中断函数运行。比如，
+```
+func f
+{
+    return = "xc";
+    [cprint "still running [f]."];
+}
+[cprint [f]];
+```
+此程序将输出
+```
+still running [f].
+xc
+```
+因为，在此程序中 return = "xc" 仅仅是设置返回变量为 xc，并没有中断函数运行，所以会输出 still running [f].。但是，如果使用 return 语句，比如：
+```
+func f
+{
+    return "xc";
+    [cprint "still running [f]."];
+}
+[cprint [f]];
+```
+此程序将输出
+```
+xc
+```
+可以看到，return 语句直接中断了函数运行。总结 return 变量和 return 语句的区别如下：<br>
+1. return 变量是一个存储在函数存储域内的变量，每个函数都有 return 变量，按照第一章的语法操作变量。设置它的值并不会导致中断函数运行。<br>
+2. return 语句是一个语句，它的语法是 return <statement>; 。statement 是一个表达式，可以是立即量，变量，函数语句。<br>
+特别的，statement语句也可以省略，可以使用 return; 来直接终止函数。此时，函数的返回值是 return 变量的值。比如：
+```
+func f
+{
+    return = "xc";
+    return;
+}
+```
+和
+```
+func f
+{
+    return "xc";
+}
+```
+返回的结果是相同的。
+
 #### 4. 变量的作用域
 ##### 4.1 全局变量
 ```
