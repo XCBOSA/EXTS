@@ -91,7 +91,7 @@ var_a = "ok";
 func main
 {
     var_b = "ok";
-    [inner];
+    [.inner];
     func inner
     {
         var_c = "ok";
