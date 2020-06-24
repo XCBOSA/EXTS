@@ -97,7 +97,7 @@ xc
 ```
 可以看到，return 语句直接中断了函数运行。总结 return 变量和 return 语句的区别如下：<br>
 1. return 变量是一个存储在函数存储域内的变量，每个函数都有 return 变量，按照第一章的语法操作变量。设置它的值并不会导致中断函数运行。<br>
-2. return 语句是一个语句，它的语法是 return <statement>; 。statement 是一个表达式，可以是立即量，变量，函数语句。<br>
+2. return 语句是一个语句，它的语法是 return statement; 。statement 是一个表达式，可以是立即量，变量，函数语句。<br>
 特别的，statement语句也可以省略，可以使用 return; 来直接终止函数。此时，函数的返回值是 return 变量的值。比如：
 ```
 func f
