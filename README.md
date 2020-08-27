@@ -6,7 +6,7 @@ Island.StandardLib 是一个封装我大部分【轮子】的库，这个项目�
 
 ### EXTV
 #### 1. 基础类型
-EXTV中有4个基础类型，分别是
+EXTV中有4个<br>不可拓展的<br>基础类型，分别是
 ```
 Number    描述一个浮点数
 String    描述一个字符串
