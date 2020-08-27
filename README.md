@@ -35,6 +35,10 @@ Number 的公共成员函数列表
 # 返回此数字的powerIndex此幂
 @member func pow: powerIndex(Number) { ... } => Number
 
+@member func morethan: val(Number) { ... } => Bool
+@member func lessthan: val(Number) { ... } => Bool
+@member func equal: val { ... } => Bool
+
 # 返回此实例的字符串表达形式
 @member func str { ... } => String
 
@@ -55,6 +59,7 @@ String 的公共成员函数列表
 
 # 返回此实例的字符串表达形式
 @member func str { ... } => String
+@member func equal: val { ... } => Bool
 
 @endclass
 ```
@@ -70,6 +75,7 @@ Vec3 的公共成员函数列表
 @member func dot: array(Vec3)* { ... } => Vec3
 @member func distance: another(Vec3) { ... } => Number
 @member func str { ... } => String
+@member func equal: val { ... } => Bool
 
 @endclass
 ```
@@ -79,6 +85,7 @@ Bool 的公共成员函数列表
 
 @member func istrue: func(:{}) { ... }
 @member func isfalse: func(:{}) { ... }
+@member func equal: val { ... } => Bool
 
 @endclass
 ```
