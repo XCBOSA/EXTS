@@ -6,7 +6,7 @@ Island.StandardLib 是一个封装我大部分【轮子】的库，这个项目�
 
 ### EXTV
 #### 1. 基础类型
-EXTV中有4个<br>不可拓展的<br>基础类型，分别是
+EXTV中有4个不可拓展的基础类型，分别是
 ```
 Number    描述一个浮点数
 String    描述一个字符串
@@ -55,6 +55,30 @@ String 的公共成员函数列表
 
 # 返回此实例的字符串表达形式
 @member func str { ... } => String
+
+@endclass
+```
+Vec3 的公共成员函数列表
+```
+@class Vec3
+
+@member func add: array(Vec3)* { ... } => Vec3
+@member func sub: array(Vec3)* { ... } => Vec3
+@member func x { ... } => Number
+@member func y { ... } => Number
+@member func z { ... } => Number
+@member func dot: array(Vec3)* { ... } => Vec3
+@member func distance: another(Vec3) { ... } => Number
+@member func str { ... } => String
+
+@endclass
+```
+Bool 的公共成员函数列表
+```
+@class Bool
+
+@member func istrue: func(:{}) { ... }
+@member func isfalse: func(:{}) { ... }
 
 @endclass
 ```
