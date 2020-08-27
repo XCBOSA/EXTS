@@ -1,5 +1,5 @@
-# EXTS
-###### Extension String
+# EXTS & EXTV
+###### Extension String | EXTV 是 EXTS 的面向对象版本
 一个基于C#的、即时编译运行的脚本语言。此外，它还有基于C++和Swift的高效能版本。EXTS不依赖反射机制，它可以在任何AOT编译平台上运行 (如：iOS 热更新)
 <br>
 Island.StandardLib 是一个封装我大部分【轮子】的库，这个项目用到了一点点这里的内容，编译的话实现一下没有的函数就行啦~
@@ -143,17 +143,16 @@ func main
     func inner
     {
         var_c = "ok";
-        [cprint var_a " " var_b " " var_c];      // 输出 non ok ok
+        [cprint var_a " " var_b " " var_c];      // 输出 ok ok ok
     }
-    [cprint var_a " " var_b " " var_c];          // 输出 non ok non
+    [cprint var_a " " var_b " " var_c];          // 输出 ok ok non
 }
 [cprint var_a " " var_b " " var_c];              // 输出 ok non non
 [main];
 ```
 总结一下，变量的作用域具有如下规律：<br>
-1. 在最外侧、不属于任何函数的地方定义的变量，无法被函数内访问。<br>
-2. 函数内部定义的变量，自身函数和函数中的子级函数可以访问，但它的父级无法访问。<br>
-3. 当一个函数运行结束后，函数内的所有变量会被释放。
+1. 函数内部定义的变量，自身函数和函数中的子级函数可以访问，但它的父级无法访问。<br>
+2. 当一个函数运行结束后，函数内的所有变量会被释放。
 
 #### 5. 匿名函数和常函数
 ##### 5.1 匿名函数和它的函数指针
