@@ -16,20 +16,28 @@ Bool      描述一个布尔值
 其中，Number的成员函数有
 ```
 @class Number
+
 # 返回此数字的一个深拷贝
 @member func num { ... } => Number
+
 # 返回此数字和所有参数数字相加的结果
 @member func add: array(Number)* { ... } => Number
+
 # 返回此数字和所有参数数字相减的结果
 @member func sub: array(Number)* { ... } => Number
+
 # 返回此数字和所有参数数字相乘的结果
 @member func mul: array(Number)* { ... } => Number
+
 # 返回此数字和所有参数数字相除的结果
 @member func div: array(Number)* { ... } => Number
+
 # 返回此数字的powerIndex此幂
 @member func pow: powerIndex(Number) { ... } => Number
+
 # 返回此数字的字符串表达形式
 @member func str { ... } => String
+
 @endclass
 ```
 
