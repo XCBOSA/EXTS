@@ -82,6 +82,24 @@ Bool 的公共成员函数列表
 
 @endclass
 ```
+#### 2. 描述自定义类型
+```
+@class TestClass
+# Todo
+@endclass
+```
+如此的定义一个TestClass。@class和@endclass称之为 标签。在匹配的两个标签中间描述这个类型。
+
+@member 修饰的元素是这个类中的成员。它可以修饰：
+`@member VarName:VarType`
+在类中创建一个成员变量。这个变量的名称是VarName，类型是VarType。
+`@member func: ... { ... }`
+在类中创建一个成员函数。成员函数的语法就是在普通函数的前面加一个@member标签，在成员函数中通过`[self:VarName]`来访问成员变量，通过`[self:VarName value]`来设置成员变量。
+
+以上语法实际上只是语言级支持，它们是由EXTV编译器实现的。那么@member标签下编译器到底做了什么呢？
+实际上，当一个函数被@member修饰，很简单，编译器会为这个函数自动增加一个self参数作为首个参数，它就代表了当前实例，然后将此函数放入此类型的布局 (EClassLayout)。
+当一个变量被@member修饰，编译器会首先将这个变量添加到类型布局中，然后创建 Val:Getter 和 Val:Setter 函数。在类型初始化的时候，EXTV会按照布局的内容创建一份实例保留内存，然后调用init成员函数执行您定义的初始化过程。在 Val:Getter 和 Val:Setter 函数中，会通过生成的语句访问实例保留内存。
+
 
 ### 基础语法
 #### 1. 一般变量赋值语句
