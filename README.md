@@ -85,6 +85,7 @@ Bool 的公共成员函数列表
 
 @member func istrue: func(:{}) { ... }
 @member func isfalse: func(:{}) { ... }
+@member func str { ... }
 @member func equal: val { ... } => Bool
 
 @endclass
