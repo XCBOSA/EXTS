@@ -4,6 +4,35 @@
 <br>
 Island.StandardLib 是一个封装我大部分【轮子】的库，这个项目用到了一点点这里的内容，编译的话实现一下没有的函数就行啦~
 
+### EXTV
+#### 1. 基础类型
+EXTV中有4个基础类型，分别是
+```
+Number    描述一个浮点数
+String    描述一个字符串
+Vec3      描述一个向量
+Bool      描述一个布尔值
+```
+其中，Number的成员函数有
+```
+@class Number
+# 返回此数字的一个深拷贝
+@member func num { ... } => Number
+# 返回此数字和所有参数数字相加的结果
+@member func add: array(Number)* { ... } => Number
+# 返回此数字和所有参数数字相减的结果
+@member func sub: array(Number)* { ... } => Number
+# 返回此数字和所有参数数字相乘的结果
+@member func mul: array(Number)* { ... } => Number
+# 返回此数字和所有参数数字相除的结果
+@member func div: array(Number)* { ... } => Number
+# 返回此数字的powerIndex此幂
+@member func pow: powerIndex(Number) { ... } => Number
+# 返回此数字的字符串表达形式
+@member func str { ... } => String
+@endclass
+```
+
 ### 基础语法
 #### 1. 一般变量赋值语句
 ```
