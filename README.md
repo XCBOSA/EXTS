@@ -13,7 +13,7 @@ String    描述一个字符串
 Vec3      描述一个向量
 Bool      描述一个布尔值
 ```
-其中，Number的成员函数有
+Number 的公共成员函数列表
 ```
 @class Number
 
@@ -35,7 +35,25 @@ Bool      描述一个布尔值
 # 返回此数字的powerIndex此幂
 @member func pow: powerIndex(Number) { ... } => Number
 
-# 返回此数字的字符串表达形式
+# 返回此实例的字符串表达形式
+@member func str { ... } => String
+
+@endclass
+```
+String 的公共成员函数列表
+```
+@class String
+
+# 返回拼接所有此字符串和参数的字符
+@member func add: array(String)* { ... } => String
+
+# 转换为数字
+@member func num { ... } => Number
+
+# 输出此字符串
+@member func log { ... }
+
+# 返回此实例的字符串表达形式
 @member func str { ... } => String
 
 @endclass
